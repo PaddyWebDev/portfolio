@@ -28,13 +28,14 @@ export default function Home() {
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
         templateParams,
-        "jAB7HSWiJXvbmvSRA"
+       "jAB7HSWiJXvbmvSRA"
       )
       .then(
         (response: any) => {
-          console.log("SUCCESS!", response.status, response.text);
+          alert('Success!')
         },
         (error: any) => {
+          alert("Failed!")
           console.log("FAILED...", error);
         }
       );
