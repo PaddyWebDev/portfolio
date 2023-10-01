@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ChefHat, Newspaper } from 'lucide-react'
 import HeadSection from './components/HeadSection'
-import sendMail from './actions/sendMail'
+import sendMail from './components/sendMail'
 import Footer from './components/Footer'
 
 
