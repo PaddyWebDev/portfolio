@@ -4,24 +4,41 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ChefHat, Newspaper } from 'lucide-react'
 import HeadSection from './components/HeadSection'
+import sendMail from './actions/sendMail'
+import Footer from './components/Footer'
+
+
 export default function Home() {
   const [FormData, SetFormData] = useState<string | any>({
+    name: "",
     email: "",
-    subject: "",
     message: "",
   })
+
 
   const TextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
     SetFormData({ ...FormData, [id]: value })
   }
-  function HandleFormData(event: React.FormEvent) {
+
+
+  async function HandleFormData(event: React.FormEvent) {
     event.preventDefault();
-    SetFormData({
-      email: "",
-      subject: "",
-      message: "",
-    })
+    try {
+      const templateParams = {
+        name: FormData.name,
+        message: FormData.message,
+        email: FormData.email
+      };
+      sendMail(templateParams);
+      SetFormData({
+        name: "",
+        email: "",
+        message: "",
+      })
+    } catch (error) {
+      console.log(error);
+    }
   }
   return (
     <>
@@ -29,14 +46,15 @@ export default function Home() {
         <Navbar />
         <HeadSection />
 
+
         <section className='min-h-screen bg-slate-100 dark:bg-[#000001] gap-7 md:flex-nowrap flex-wrap flex items-center justify-center px-3' id="home">
           <div className=' '>
             <h1 className='text-4xl mb-1'>Hello {"I'm"} Padmanabh Malwade</h1>
             <p className='mb-2'>{"I'm "} a web Developer {"here's"} you can find information about me and my work</p>
-            <Link href={"/Images/PadmanabhMalwadeResume.pdf"}  type="button" className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Download CV</Link>
+            <Link href={"/Images/PadmanabhMalwadeResume.pdf"} type="button" className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Download CV</Link>
           </div>
           <div className=' bg-purple-600 p-10 rounded-[59%_41%_72%_28%_/_50%_57%_43%_50%] '>
-            <Image draggable="false" className=' rounded-[39%_21%_82%_28%_/_90%_57%_73%_80%] ' src={"/Images/pic.jpg"} width={420} height={220} alt='profilepic' />
+            <Image draggable="false" className=' rounded-full ' src={"/Images/pic.jpg"} width={420} height={220} alt='profilepic' />
           </div>
         </section>
 
@@ -44,8 +62,10 @@ export default function Home() {
         <section className='min-h-screen flex flex-col items-center justify-center p-5 bg-slate-100 dark:bg-slate-950' id="about">
           <div className=' w-8/12 '>
             <h1 className='text-3xl mb-3 font-medium'>About me</h1>
-            <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto reprehenderit iure porro deserunt maiores perferendis natus accusantium
-              cupiditate pariatur autem fugiat ea suscipit, minima tempore libero ipsa impedit. Corporis eaque vitae incidunt doloribus itaque?</h6>
+            <h6>
+              {`  Hey there I'm Padmanabh Malwade and I live in Karad, Maharashtra, India. As a budding web developer I absolutely love creating websites that not look great but also function smoothly. Although I'm relatively new, to this field my passion and dedication for learning really set me apart. When it comes to coding I have a foundation in Web Development & I always strive to write efficient code.
+My ultimate goal is to collaborate with professionals who share the passion, for turning ideas into captivating online experiences. Lets connect and discover the possibilities of web development together! Feel free to reach out to me via email or connect with me on LinkedIn, GitHub or any other social media platform you prefer. Thank you much for checking out my portfolio! `}
+            </h6>
           </div>
           <div className=' w-full flex items-center justify-evenly md:flex-nowrap flex-wrap gap-5 place-items-center'>
 
@@ -96,7 +116,7 @@ export default function Home() {
 
         </section>
 
-        <section className="min-h-screen bg-[#f6f6f6] dark:bg-[#000001]">
+        <section className="min-h-screen bg-[#f6f6f6] dark:bg-[#000001]" id='projects'>
           <h1 className=' ml-[5vw] text-3xl font-serif mt-[10vh] mb-5'>Projects</h1>
           <div className='w-full grid md:grid-cols-2 grid-cols-1 sm:place-items-center place-items-start gap-3'>
 
@@ -127,31 +147,33 @@ export default function Home() {
         </section>
 
 
-        <section className='min-h-screen bg-slate-100 dark:bg-slate-950 gap-7 md:flex-nowrap flex-wrap flex items-center justify-center px-3' id="contact">
+        <section className='  min-h-screen bg-slate-100 dark:bg-slate-950 gap-7 md:flex-nowrap flex-wrap flex items-center justify-center px-3' id="contact">
           <div className=''>
             <Image className='rounded-lg md:w-[30vw]' draggable="false" src={"/Images/Contact.gif"} width={320} height={320} alt='contactImage' />
           </div>
-          <div className='  lg:w-[30vw] w-[80vw] p-5'>
-            <form onSubmit={HandleFormData}>
+          <div className='  lg:w-[40vw] md:w-[50vw] sm:mb-0 mb-6 w-[80vw] p-5'>
+            <form onSubmit={HandleFormData} method='POST'>
               <h2 className='text-4xl mb-4'>Contact me</h2>
+              <div className="mb-6">
+                <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                <input type="search" onChange={TextChange} value={FormData.name} id="name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Name" required />
+              </div>
               <div className="mb-6">
                 <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                 <input type="email" onChange={TextChange} value={FormData.email} id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="yourEmail@gmail.com" required />
               </div>
-              <div className="mb-6">
-                <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Subject</label>
-                <input type="search" id="subject" placeholder='subject' onChange={TextChange} value={FormData.subject} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
-              </div>
               <div className='mb-6'>
                 <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
-                <input onChange={TextChange} placeholder='Message' value={FormData.message} id="message" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                <input  type='search' onChange={TextChange} placeholder='Message' value={FormData.message} id="message" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
               </div>
-              <button type="submit" className="text-white bg-blue-700 w-54 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+              <div className=' flex justify-end'>
+              <button type="submit" className="  text-white bg-purple-600 w-54 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm  sm:w-auto px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">Send Email</button>
+              </div>
             </form>
-
           </div>
         </section>
       </main>
+      <Footer />
     </>
   )
 }

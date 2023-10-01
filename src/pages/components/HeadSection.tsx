@@ -7,7 +7,6 @@ const HeadSection = () => {
             <title>
                 Porfolio
             </title>
-            <link rel="shortcut icon" href='/Images/favicon.jpg' type="image/x-icon" />
         </Head>
     )
 }
