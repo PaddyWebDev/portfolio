@@ -28,7 +28,7 @@ export default function Home() {
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
         templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
+        "jAB7HSWiJXvbmvSRA"
       )
       .then(
         (response: any) => {
