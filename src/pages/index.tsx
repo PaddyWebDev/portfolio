@@ -8,6 +8,7 @@ import emailjs from "@emailjs/browser";
 import Footer from './components/Footer'
 
 
+
 export default function Home() {
   const [FormData, SetFormData] = useState<string | any>({
     name: "",
@@ -15,7 +16,9 @@ export default function Home() {
     message: "",
   })
 
-
+  const serviceId: string = "service_511mwzb"
+  const templateId: string = "template_jxznix8"
+  const publicKey: string = "jAB7HSWiJXvbmvSRA"
   const TextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
     SetFormData({ ...FormData, [id]: value })
@@ -25,10 +28,10 @@ export default function Home() {
   const sendMail = (templateParams: any) => {
     emailjs
       .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+        serviceId,
+        templateId,
         templateParams,
-       "jAB7HSWiJXvbmvSRA"
+        publicKey
       )
       .then(
         (response: any) => {
