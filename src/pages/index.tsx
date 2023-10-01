@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ChefHat, Newspaper } from 'lucide-react'
 import HeadSection from './components/HeadSection'
-import sendMail from './components/sendMail'
+import emailjs from "@emailjs/browser";
 import Footer from './components/Footer'
 
 
@@ -20,6 +20,25 @@ export default function Home() {
     const { id, value } = e.target;
     SetFormData({ ...FormData, [id]: value })
   }
+
+
+  const sendMail = (templateParams: any) => {
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
+      )
+      .then(
+        (response: any) => {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        (error: any) => {
+          console.log("FAILED...", error);
+        }
+      );
+  };
 
 
   async function HandleFormData(event: React.FormEvent) {
@@ -40,6 +59,10 @@ export default function Home() {
       console.log(error);
     }
   }
+
+
+
+
   return (
     <>
       <main className=''>
@@ -164,10 +187,10 @@ My ultimate goal is to collaborate with professionals who share the passion, for
               </div>
               <div className='mb-6'>
                 <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
-                <input  type='search' onChange={TextChange} placeholder='Message' value={FormData.message} id="message" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                <input type='search' onChange={TextChange} placeholder='Message' value={FormData.message} id="message" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
               </div>
               <div className=' flex justify-end'>
-              <button type="submit" className="  text-white bg-purple-600 w-54 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm  sm:w-auto px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">Send Email</button>
+                <button type="submit" className="  text-white bg-purple-600 w-54 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm  sm:w-auto px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">Send Email</button>
               </div>
             </form>
           </div>
