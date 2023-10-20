@@ -26,3 +26,17 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+::-webkit-scrollbar {
+  @apply w-2.5 rounded-[25px];
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-[30px];
+  background: #ccc;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
