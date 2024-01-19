@@ -57,12 +57,6 @@ export default function Contact() {
     }
 
 
-
-    async function HandleFormData(event: React.FormEvent) {
-        event.preventDefault();
-
-    }
-
     return (
         <section className='  min-h-screen bg-slate-100 dark:bg-slate-950 gap-7 md:flex-nowrap flex-wrap flex items-center justify-center px-3 ' id="contact">
             <div className='md:mt-0 mt-[7vh]' data-aos-easing="ease-out-cubic" data-aos="fade-right">
