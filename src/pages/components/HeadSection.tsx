@@ -5,7 +5,7 @@ export default function HeadSection() {
     return (
         <Head>
             <title>
-                Portfolio
+             Padmanabh's Full-Stack Showcase: Crafting Web Experiences with Java, JavaScript, and Next.js
             </title>
             <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         </Head>
