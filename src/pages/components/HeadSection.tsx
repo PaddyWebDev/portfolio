@@ -8,6 +8,7 @@ export default function HeadSection() {
                 {"Padmanabh's Full-Stack Showcase: Crafting Web Experiences with Java, JavaScript, and Next.js"}
             </title>
             <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+            <meta name="description" content={"Discover Padmanabh Malwade's portfolio, showcasing dynamic web experiences. Full-stack developer skilled in Java, JavaScript, TypeScript, and Next.js. Explore innovative projects today"} />
         </Head>
     )
 }
