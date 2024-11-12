@@ -24,6 +24,7 @@ export default function RootLayout({
         <meta property="og:description" content={metadata.description!} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/path/to/your/portfolio-image.jpg" />
+<meta name="google-site-verification" content="0VOCVxppga6dPoVmInwKFe4y7gDPbopUfrLVO8AtdmE" />
       </Head>
       <body className={archivo.className + ' select-none ' + bricolage_grotesque.className}>
         <ThemeProvider
