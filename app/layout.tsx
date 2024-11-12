@@ -9,7 +9,7 @@ import Head from "next/head";
 export const metadata: Metadata = {
 verification:{
  google : "0VOCVxppga6dPoVmInwKFe4y7gDPbopUfrLVO8AtdmE"
-}
+},
   title: 'Padmanabh Malwade | Software Web Developer Portfolio',
   description: "Explore Padmanabh Malwade's portfolio showcasing his skills in Software Development & Web Designing. Specializing in Next.js, React, & Node.js."
 };
