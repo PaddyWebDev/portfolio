@@ -21,8 +21,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-      </Head>
       <body className={archivo.className + ' select-none ' + bricolage_grotesque.className}>
         <ThemeProvider
           attribute="class"
