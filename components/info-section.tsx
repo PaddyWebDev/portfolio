@@ -69,6 +69,7 @@ export default function InfoSection() {
             className="mx-auto aspect-square object-contain overflow-hidden rounded-xl  object-center lg:order-last"
             height="550"
             src="/Images/pic.jpg"
+            loading = "lazy"
             width="550"
           />
         </motion.div>
