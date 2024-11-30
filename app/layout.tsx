@@ -9,7 +9,6 @@ import Head from "next/head";
 export const metadata: Metadata = {
 verification:{
  google : "0VOCVxppga6dPoVmInwKFe4y7gDPbopUfrLVO8AtdmE",
- bing : "D21C43C3A003D8C76187328778E2A711",
 },
   title: 'Padmanabh Malwade',
   description: "Explore Padmanabh Malwade's portfolio showcasing his skills in Software Development & Web Designing. Specializing in Next.js, React, & Node.js."
