@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 verification:{
  google : "0VOCVxppga6dPoVmInwKFe4y7gDPbopUfrLVO8AtdmE",
 other : {
-bing : "D21C43C3A003D8C76187328778E2A711",
+"msvalidate.01" : "D21C43C3A003D8C76187328778E2A711",
 },
 },
   title: 'Padmanabh Malwade',
