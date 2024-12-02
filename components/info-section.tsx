@@ -6,8 +6,8 @@ import { motion } from 'framer-motion'
 
 export default function InfoSection() {
   return (
-    <section className="w-full h-screen flex items-center bg-neutral-50 py-12 md:py-24 lg:py-32 dark:bg-gray-950">
-      <div className="container grid items-center lg:grid-cols-2 gap-3">
+    <section className="w-full h-screenpy-12 md:py-24 lg:py-32 flex items-center bg-neutral-50 dark:bg-gray-950">
+      <div className="container grid items-center my-auto lg:grid-cols-2 gap-3">
         <motion.div
           initial={{
             opacity: 0,
@@ -41,7 +41,7 @@ export default function InfoSection() {
             }
           }}>
             <Link
-              className="inline-flex h-10 items-center justify-center rounded-md bg-cyan-900 px-8 text-sm font-medium text-cyan-50 shadow transition-colors hover:bg-cyan-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-cyan-50 dark:text-cyan-900 dark:hover:bg-cyan-50/90 dark:focus-visible:ring-cyan-300"
+              className="inline-flex h-10 items-center justify-center rounded-md bg-cyan-600 px-8 text-sm font-medium text-cyan-50 shadow transition-colors hover:bg-cyan-700/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-cyan-50 dark:text-cyan-900 dark:hover:bg-cyan-50/90 dark:focus-visible:ring-cyan-300"
               href="/PadmanabhMalwadeResume.pdf"
             >
               Download Resume
@@ -66,7 +66,7 @@ export default function InfoSection() {
           <Image
             alt="Hero Section Image"
             draggable="false"
-            className="mx-auto aspect-square object-contain overflow-hidden rounded-xl  object-center lg:order-last"
+            className="mx-auto aspect-square object-contain overflow-hidden rounded-md  object-center lg:order-last"
             height="550"
             src="/Images/pic.jpg"
             loading = "lazy"

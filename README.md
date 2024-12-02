@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Portfolio
 
-## Getting Started
+Welcome to my personal portfolio! This project showcases my skills, projects, and contact information in a clean and modern design. It's built with a focus on performance, responsiveness, and a user-friendly interface. Below, you'll find details about the components and structure of the portfolio.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Components](#components)
+  - [UI Components](#ui-components)
+  - [Navbar](#navbar)
+  - [Info Section](#info-section)
+  - [Contact Section](#contact-section)
+  - [Project Section](#project-section)
+  - [Skills Section](#skills-section)
+  - [Theme Switcher](#theme-switcher)
+- [Lib Folder](#lib-folder)
+  - [font.ts](#fontts)
+  - [project-list.ts](#project-listts)
+  - [skill-list.ts](#skill-listts)
+  - [utils.ts](#utilsts)
+  - [typing-effect.tsx](#typing-effecttsx)
+- [Providers Folder](#providers-folder)
+  - [ThemeProvider.tsx](#themeprovidertsx)
+- [App Folder](#app-folder)
+  - [layout.tsx](#layouttsx)
+  - [page.tsx](#pagetsx)
+  - [globals.css](#globalscss)
+  - [api/send-mail/route.ts](#apisend-mailroutets)
+- [How to Run](#how-to-run)
+- [License](#license)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This portfolio is built using the following technologies:
 
-## Learn More
+- **Frontend**: 
+  - React
+  - Next.js
+  - TypeScript
+  - Tailwind CSS
+  - ShadCN UI Components
+  - Nodemailer (for the contact form email functionality)
 
-To learn more about Next.js, take a look at the following resources:
+- **Deployment**: 
+  - Vercel (for hosting)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+The project is structured as follows:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
