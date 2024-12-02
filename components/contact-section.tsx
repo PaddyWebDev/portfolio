@@ -111,7 +111,7 @@ export default function ContactSection() {
                         >
                             <Link
                                 className="text-cyan-600 hover:text-cyan-800 dark:text-cyan-400 dark:hover:text-cyan-50"
-                                href="#"
+                                href="https://www.linkedin.com/in/paddywebdev/"
                                 target="_blank"
                             >
                                 <LinkedinIcon className="h-6 w-6" />
@@ -141,7 +141,7 @@ export default function ContactSection() {
                         >
                             <Link
                                 className="text-cyan-600 hover:text-cyan-800 dark:text-cyan-400 dark:hover:text-cyan-50"
-                                href="#"
+                          href="https://github.com/PaddyWebDev"
                                 target="_blank"
                             >
                                 <GithubIcon className="h-6 w-6" />
