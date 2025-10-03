@@ -4,6 +4,7 @@ import ContactSection from "@/components/contact-section"
 import ProjectSection from "@/components/project-section"
 import SkillsSection from "@/components/skills-section"
 import InfoSection from "@/components/info-section"
+import CommunityImpact from "@/components/community-impact"
 
 
 export default function HomePage() {
@@ -14,6 +15,7 @@ export default function HomePage() {
       <InfoSection />
       <SkillsSection />
       <ProjectSection />
+      <CommunityImpact />
       <ContactSection />
     </main>
   )

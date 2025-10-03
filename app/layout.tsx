@@ -6,7 +6,7 @@ import { archivo, bricolage_grotesque } from "@/lib/font";
 
 export const metadata: Metadata = {
   verification: {
-    google: "0VOCVxppga6dPoVmInwKFe4y7gDPbopUfrLVO8AtdmE",
+    google: process.env.GOOGLE_SITE_VERIFICATION_TOKEN,
     other: {
       "msvalidate.01": "D21C43C3A003D8C76187328778E2A711",
     },

@@ -1,11 +1,14 @@
 import { MotionProps } from "framer-motion";
 import {
   Activity,
+  ChefHat,
   ClipboardCheck,
   CookingPot,
   LucideIcon,
   MessageSquareMore,
   Newspaper,
+  NotebookPen,
+  Sprout,
 } from "lucide-react";
 
 type ProjectList = {
@@ -15,33 +18,61 @@ type ProjectList = {
   techStack: string[];
   codeLink: string;
   liveLink: string;
-  initial?: MotionProps["initial"];
-  whileInView?: MotionProps["whileInView"];
-  whileHover?: MotionProps["whileHover"];
+  isDeployed: boolean;
 };
+
 
 export default function useProjectList(): ProjectList[] {
   return [
     {
-      icon: ClipboardCheck,
-      name: "Task Management System",
+      isDeployed: true,
+      icon: ChefHat,
+      name: "Recipe Recommendation System",
       description:
-        " A powerful task management system to help you stay organized and productive.",
-      techStack: ["NextJS", "MongoDB", "Tailwind CSS"],
-      codeLink: "https://github.com/PaddyWebDev/TaskSwift",
-      liveLink: "#",
-      initial: {
-        opacity: 0,
-      },
-      whileInView: {
-        opacity: 100,
-        transition: {
-          duration: 1.5,
-          ease: "easeInOut",
-        },
-      },
+        "Built a personalized recipe recommender using cosine similarity with dynamic dietary and cultural filters.",
+      techStack: [
+        "Next.js",
+        "Flask",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "PostgreSQL",
+      ],
+      codeLink: "https://github.com/PaddyWebDev/recipe_recommendation_frontend",
+      liveLink: "https://flavourfinder.vercel.app/",
+     
     },
     {
+      isDeployed: true,
+      icon: Sprout,
+      name: "Crop Recommendation System",
+      description:
+        "Developed an ML-based crop recommender leveraging soil data, weather, and yield estimation with Random Forest Classifier",
+      techStack: [
+        "Next.js",
+        "Flask",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "PostgreSQL",
+      ],
+      codeLink: "https://github.com/PaddyWebDev/crs_frontend",
+      liveLink: "https://crs-frontend-sage.vercel.app/",
+     
+    },
+    {
+      isDeployed: true,
+      icon: NotebookPen,
+      name: "Notezzy",
+      description:
+        "Built a collaborative todo application with real-time updates using Next.js, Express.js, WebSockets, and Socket.IO.",
+      techStack: ["NextJS", "ExpressJS", "PostgreSQL", "Tailwind CSS", "Socket.IO"],
+      codeLink: "https://github.com/PaddyWebDev/todo-app-frontend",
+      liveLink: "https://notezzy.vercel.app/",
+     
+    },
+    {
+      isDeployed: false,
       icon: MessageSquareMore,
       name: "Sky Chat",
       description:
@@ -49,18 +80,10 @@ export default function useProjectList(): ProjectList[] {
       techStack: ["NextJS", "MongoDB", "Tailwind CSS", "PusherJS"],
       codeLink: "https://github.com/PaddyWebDev/skychat-app",
       liveLink: "#",
-      initial: {
-        opacity: 0,
-      },
-      whileInView: {
-        opacity: 100,
-        transition: {
-          duration: 1.5,
-          ease: "easeInOut",
-        },
-      },
+     
     },
     {
+      isDeployed: false,
       icon: CookingPot,
       name: "Recipe Searching App",
       description:
@@ -68,72 +91,18 @@ export default function useProjectList(): ProjectList[] {
       techStack: ["NextJS", "Spooncular API", "Tailwind CSS"],
       codeLink: "https://github.com/PaddyWebDev/Recipe-App",
       liveLink: "#",
-      initial: {
-        opacity: 0,
-      },
-      whileInView: {
-        opacity: 100,
-        transition: {
-          duration: 1.5,
-          ease: "easeInOut",
-        },
-      },
+     
     },
     {
-      icon: Newspaper,
-      name: "News Website",
+      isDeployed: false,
+      icon: ClipboardCheck,
+      name: "Task Management System",
       description:
-        " A news website that provides the latest updates and information on current events.",
-
-      techStack: ["NextJS", "Tailwind CSS", "News API"],
-      codeLink: "https://github.com/PaddyWebDev/News-Website",
+        " A powerful task management system to help you stay organized and productive.",
+      techStack: ["NextJS", "MongoDB", "Tailwind CSS"],
+      codeLink: "https://github.com/PaddyWebDev/TaskSwift",
       liveLink: "#",
-      initial: {
-        opacity: 0,
-      },
-      whileInView: {
-        opacity: 100,
-        transition: {
-          duration: 1.5,
-          ease: "easeInOut",
-        },
-      },
-    },
-    {
-      icon: Activity,
-      name: "Project 5",
-      description: " A brief description for project 5",
-      techStack: ["React", "TypeScript", "Node.js"],
-      codeLink: "#",
-      liveLink: "#",
-      initial: {
-        opacity: 0,
-      },
-      whileInView: {
-        opacity: 100,
-        transition: {
-          duration: 1.5,
-          ease: "easeInOut",
-        },
-      },
-    },
-    {
-      icon: Activity,
-      name: "Project 6",
-      description: "A brief description for project 6",
-      techStack: ["React", "TypeScript", "Node.js"],
-      codeLink: "#",
-      liveLink: "#",
-      initial: {
-        opacity: 0,
-      },
-      whileInView: {
-        opacity: 100,
-        transition: {
-          duration: 1.5,
-          ease: "easeInOut",
-        },
-      },
+     
     },
   ];
 }

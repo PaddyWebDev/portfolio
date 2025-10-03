@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 export default function InfoSection() {
   return (
-    <section className="w-full h-screen py-12 md:py-24 lg:py-32 flex items-center bg-neutral-50 dark:bg-gray-950">
+    <section className="w-full h-screen py-12 md:py-24 lg:py-32 flex items-center bg-neutral-50 dark:bg-neutral-950">
       <div className="container grid items-center my-auto lg:grid-cols-2 gap-3">
         <motion.div
           initial={{
@@ -27,19 +27,20 @@ export default function InfoSection() {
             <TypingEffect name={"Padmanabh Malwade"} />
           </h1>
           <p className="mx-auto   text-gray-500 md:text-xl dark:text-gray-400">
-            As a graduate, I am eager to apply my technical skills and problem-solving abilities to create
-            innovative solutions. I am passionate about staying up-to-date with the latest technologies and am
-            excited to contribute to the growth of your organization.
+            Dedicated Full-Stack developer specializing in building modern, high-performance applications with Next.js.
+            Prioritizing clean user experiences, responsive design, 
+            and creating meaningful products that turn ideas into solutions users love
           </p>
-          <motion.div className="w-fit" whileHover={{
-            scale: 1.1,
-            transition: {
-              duration: 0.7,
-              ease: "easeInOut",
-              type: "spring",
-              bounce: 0.5
-            }
-          }}>
+          <motion.div className="w-fit"
+            whileHover={{
+              scale: 1.1,
+              transition: {
+                duration: 0.7,
+                ease: "easeInOut",
+                type: "spring",
+                bounce: 0.5
+              }
+            }}>
             <Link
               className="inline-flex h-10 items-center justify-center rounded-md bg-cyan-600 px-8 text-sm font-medium text-cyan-50 shadow transition-colors hover:bg-cyan-700/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-cyan-50 dark:text-cyan-900 dark:hover:bg-cyan-50/90 dark:focus-visible:ring-cyan-300"
               href="/PadmanabhMalwadeResume.pdf"
@@ -69,7 +70,7 @@ export default function InfoSection() {
             className="mx-auto aspect-square object-contain overflow-hidden rounded-md  object-center lg:order-last"
             height="550"
             src="/Images/pic.jpg"
-            loading = "lazy"
+            loading="lazy"
             width="550"
           />
         </motion.div>

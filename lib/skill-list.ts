@@ -12,7 +12,7 @@ export default function useSkillList(): SkillSectionType[] {
   return [
     {
       title: "Programming Languages",
-      description: "JavaScript, Typescript, Java, PHP",
+      description: "JavaScript, Typescript, Java",
       initial: {
         opacity: 0,
         x: -150,
@@ -25,18 +25,17 @@ export default function useSkillList(): SkillSectionType[] {
           ease: "easeInOut",
         },
       },
-
       whileHover: {
-        scale: 1.05,
+        scale: 1.1,
         transition: {
-          duration: 1,
+          duration: 0.35,
           ease: "easeInOut",
         },
       },
     },
     {
       title: "Frameworks & Libraries",
-      description: "React, Next.js, Express, Node.js",
+      description: "React, Next.js, Express, Node.js, SpringBoot",
       initial: {
         opacity: 0,
         x: 150,
@@ -50,9 +49,9 @@ export default function useSkillList(): SkillSectionType[] {
         },
       },
       whileHover: {
-        scale: 1.05,
+        scale: 1.1,
         transition: {
-          duration: 1,
+          duration: 0.35,
           ease: "easeInOut",
         },
       },
@@ -73,9 +72,9 @@ export default function useSkillList(): SkillSectionType[] {
         },
       },
       whileHover: {
-        scale: 1.05,
+        scale: 1.1,
         transition: {
-          duration: 1,
+          duration: 0.35,
           ease: "easeInOut",
         },
       },
@@ -97,9 +96,9 @@ export default function useSkillList(): SkillSectionType[] {
         },
       },
       whileHover: {
-        scale: 1.05,
+        scale: 1.1,
         transition: {
-          duration: 1,
+          duration: 0.35,
           ease: "easeInOut",
         },
       },
