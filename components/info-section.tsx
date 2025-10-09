@@ -28,7 +28,7 @@ export default function InfoSection() {
           </h1>
           <p className="mx-auto   text-gray-500 md:text-xl dark:text-gray-400">
             Dedicated Full-Stack developer specializing in building modern, high-performance applications with Next.js.
-            Prioritizing clean user experiences, responsive design, 
+            Prioritizing clean user experiences, responsive design,
             and creating meaningful products that turn ideas into solutions users love
           </p>
           <motion.div className="w-fit"
@@ -67,7 +67,7 @@ export default function InfoSection() {
           <Image
             alt="Hero Section Image"
             draggable="false"
-            className="mx-auto aspect-square object-contain overflow-hidden rounded-md  object-center lg:order-last"
+            className="mx-auto aspect-square object-contain overflow-hidden rounded-md  object-center lg:order-last pointer-events-none"
             height="550"
             src="/Images/pic.jpg"
             loading="lazy"

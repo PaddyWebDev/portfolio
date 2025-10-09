@@ -45,9 +45,9 @@ export default function CyberWarriorPage() {
     return (
         <div className="min-h-screen bg-neutral-100 text-neutral-900 dark:bg-neutral-950">
             <Navbar />
-            <section className="text-center py-16 px-4 bg-neutral-50 dark:bg-neutral-900 mt-[6dvh]">
+            <section className="text-center py-16 px-4 bg-neutral-50 dark:bg-neutral-900 mt-[8dvh]">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4 text-cyan-600 dark:text-cyan-400">
-                    🛡️ Cyber Warrior – Quick Heal Foundation
+                    {`🛡️ Cyber Warrior – Quick Heal Foundation`}
                 </h1>
                 <p className="text-lg md:text-xl max-w-2xl mx-auto dark:text-neutral-300">
                     Promoting cybersecurity awareness and digital safety across communities. Reached
@@ -60,7 +60,7 @@ export default function CyberWarriorPage() {
                 <h2 className="text-2xl font-bold mb-6 text-cyan-600 dark:text-cyan-400 text-center">
                     Presentation Details
                 </h2>
-                <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-3">
+                <div className="flex flex-row md:flex-nowrap gap-5 flex-wrap">
                     {presentationDetails.map((p, idx) => (
                         <div key={idx} className="bg-white dark:bg-neutral-900 rounded-xl shadow p-6">
                             <h3 className="text-xl font-semibold mb-1 dark:text-neutral-50">{p.title}</h3>
